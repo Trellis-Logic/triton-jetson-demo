@@ -39,8 +39,10 @@ if [ ! -e $BASE_DIR/$version/labels.txt ]; then
     exit 1
 fi
 
-mkdir -p $TRITON_MODEL_REPO_DIR/1
-cp $BASE_DIR/$version/model.plan $TRITON_MODEL_REPO_DIR/1
+rm -rf $TRITON_MODEL_REPO_DIR/*
+deploydir=$TRITON_MODEL_REPO_DIR/${version_dir[${version}]}
+mkdir -p $deploydir
+cp $BASE_DIR/$version/model.plan $deploydir
 cp $BASE_DIR/$version/config.pbtxt $TRITON_MODEL_REPO_DIR
 cp $BASE_DIR/$version/labels.txt $TRITON_MODEL_REPO_DIR
 echo "Copied model files for version $version from $BASE_DIR/$version to $TRITON_MODEL_REPO_DIR"
