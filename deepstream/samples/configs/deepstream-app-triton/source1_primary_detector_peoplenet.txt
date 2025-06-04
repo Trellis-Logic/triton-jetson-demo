@@ -148,7 +148,7 @@ plugin-type=1
 batch-size=1
 interval=0
 gie-unique-id=1
-config-file=config_infer_primary_detector_peoplenet_transformer_tao.txt
+config-file=config_infer_primary_detector_peoplenet_tao.txt
 #Required by the app for OSD, not a plugin property
 bbox-border-color0=1;0;0;1
 bbox-border-color1=0;1;1;1
