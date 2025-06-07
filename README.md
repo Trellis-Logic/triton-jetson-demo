@@ -34,3 +34,12 @@ match the version of the model loaded in the `setup_model_repo_with_version.sh` 
   * The triton server should note a changed version.
   * The pipeline should continue running, now with the updated model.
   * The version reported by `get_model_stats.sh` will match the version of the newly loaded model.
+
+# Artificially corrupting a model
+
+In order to more obviosly show the difference in model reload, you can use the `clobber_model.py`
+script to corrupt one of the input models.
+
+* Run the clobber_model.py script to corrupt the model weights, passing a path to the ngc_models
+download .onnx file.
+* Re-generate the model.plan file using the trtexec function in the download_and_convert_to_plan script.
